@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "instutationhorizon:block/end_stone_instutation_ore"
+  }
+}

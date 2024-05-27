@@ -25,6 +25,7 @@ public class ModCreativeModTabs {
                         pOutput.accept(Items.DIAMOND);
                         pOutput.accept(ModBlock.INSTUTATION_BLOCK.get());
                         pOutput.accept(ModBlock.RAW_INSTUTATION_BLOCK.get());
+                        pOutput.accept(ModBlock.END_STONE_INSTUTATION_ORE.get());
 
                     })
                     .build());
