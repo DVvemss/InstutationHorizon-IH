@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.7,
+  "group": "instutation_ingot",
+  "ingredient": {
+    "item": "instutationhorizon:raw_instutation"
+  },
+  "result": "instutationhorizon:instutation_ingot"
+}
