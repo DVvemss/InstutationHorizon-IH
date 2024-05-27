@@ -1,3 +1,9 @@
 {
-  "item.instutationhorizon.instutation_ingot": "Instutation Ingot"
+  "item.instutationhorizon.instutation_ingot": "Instutation Ingot",
+  "item.instutationhorizon.raw_instutation": "Raw Instutation",
+
+  "block.instutationhorizon.instutation_block": "Block of Instutation",
+  "block.instutationhorizon.raw_instutation_block": "Block of Raw Instutation",
+
+  "creativetab.instutation_tab": "Instutation Horizon Tab"
 }

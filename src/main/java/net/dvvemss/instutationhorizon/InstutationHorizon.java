@@ -1,6 +1,8 @@
 package net.dvvemss.instutationhorizon;
 
 import com.mojang.logging.LogUtils;
+import net.dvvemss.instutationhorizon.block.ModBlock;
+import net.dvvemss.instutationhorizon.item.ModCreativeModTabs;
 import net.dvvemss.instutationhorizon.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -26,7 +28,10 @@ public class InstutationHorizon {
     public InstutationHorizon() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        ModCreativeModTabs.register(modEventBus);
+
         ModItems.register(modEventBus);
+        ModBlock.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
@@ -44,6 +49,7 @@ public class InstutationHorizon {
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.INSTUTATION_INGOT);
+            event.accept(ModItems.RAW_INSTUTATION);
         }
     }
 
