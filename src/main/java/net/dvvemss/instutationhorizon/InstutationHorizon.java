@@ -1,6 +1,8 @@
 package net.dvvemss.instutationhorizon;
 
 import com.mojang.logging.LogUtils;
+import net.dvvemss.instutationhorizon.item.ModItems;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -17,8 +19,7 @@ import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(InstutationHorizon.MOD_ID)
-public class InstutationHorizon
-{
+public class InstutationHorizon {
     // Define mod id in a common place for everything to reference
     public static final String MOD_ID = "instutationhorizon";
     // Directly reference a slf4j logger
@@ -26,6 +27,8 @@ public class InstutationHorizon
 
     public InstutationHorizon() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModItems.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
@@ -41,7 +44,9 @@ public class InstutationHorizon
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-
+        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModItems.INSTUTATION_INGOT);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
