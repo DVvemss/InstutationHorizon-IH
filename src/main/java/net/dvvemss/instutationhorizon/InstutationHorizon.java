@@ -22,8 +22,6 @@ import org.slf4j.Logger;
 public class InstutationHorizon {
     // Define mod id in a common place for everything to reference
     public static final String MOD_ID = "instutationhorizon";
-    // Directly reference a slf4j logger
-    private static final Logger LOGGER = LogUtils.getLogger();
 
     public InstutationHorizon() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
